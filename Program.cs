@@ -1,6 +1,6 @@
 ﻿unsafe
 {
-    _ = long.TryParse(args[0], out long trials);
+    long trials = 1_000_000_000;
     long rolls = 0;
     long maxOnes = 0;
     DateTime startTime = DateTime.UtcNow;
@@ -15,8 +15,8 @@
         {
             if (loopState.ShouldExitCurrentIteration)
                 return;
-            int roll = random.Next(1,5);
-            oneCount += Convert.ToInt32((roll % 4) == 0);
+            int roll = random.Next(1,5); // Chooses randomly 1-4 inclusively
+            oneCount += Convert.ToInt32((roll % 4) == 0); // Only cares about getting 1
         }
         Interlocked.Increment(ref rolls);
 
