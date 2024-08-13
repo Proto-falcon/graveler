@@ -2,8 +2,8 @@
 ## Using .net CLI
 
 ```
->dotnet build --output ./build_output
->dotnet ./build_output/my_app.dll
+>dotnet build -c Release --output ./build_output
+>dotnet ./build_output/graveler.exe
 ```
 
 ## Using Visual Studio 2022
