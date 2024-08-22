@@ -16,7 +16,7 @@
             if (loopState.ShouldExitCurrentIteration)
                 return;
             int roll = random.Next(1,5); // Chooses randomly 1-4 inclusively
-            oneCount += Convert.ToInt32((roll % 4) == 0); // Only cares about getting 1
+            oneCount += Convert.ToInt32((roll & ~1) == 0); // Only cares about getting 1
         }
         Interlocked.Increment(ref rolls);
 
